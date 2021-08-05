@@ -12,3 +12,58 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+//----------------------------------------------------------------------
+//1й способ
+//----------------------------------------------------------------------
+
+// const makeGallery = images.map(image => {
+//   const { url, alt } = image
+//   // console.log(url, alt);
+
+//   const galleryListEl = document.createElement('li')
+//   galleryListEl.classList.add('gallery-item')
+//   // console.log(image.url);
+//   galleryListEl.insertAdjacentHTML('afterbegin', `<img src ="${url}" alt ="${alt}" width ="320" height ="200">`)
+//   // console.log(galleryListEl);
+//   return galleryListEl
+// })
+
+// const galleryList = document.querySelector('#gallery')
+// galleryList.classList.add('gallery')
+// console.log(galleryList);
+// galleryList.append(...makeGallery)
+
+//----------------------------------------------------------------------
+//2й способ
+//----------------------------------------------------------------------
+
+// const galleryContainer = document.querySelector('#gallery');
+// console.log(galleryContainer);
+
+// const createGallery = images => {
+// galleryContainer.classList.add('gallery');
+//   const imageItemsList = (image) =>
+//     `<li><img src="${image.url}" alt="${image.alt}" width='310' height='210'></li>`;
+ 
+//   const listGallery = images.map(imageItemsList).join('')
+    
+// galleryContainer.insertAdjacentHTML('beforeend', listGallery)
+    
+// }
+
+// createGallery(images);
+
+//----------------------------------------------------------------------
+//3й способ
+//----------------------------------------------------------------------
+
+const galleryList = document.querySelector('#gallery')
+console.log(galleryList);
+galleryList.classList.add('gallery')
+
+const createGallery = images.map(image => {
+  const { url, alt } = image;
+  galleryList.insertAdjacentHTML('beforeend', `<li><img src ="${url}" alt ="${alt}" width ="320" height ="200"></li>`)
+  
+})
