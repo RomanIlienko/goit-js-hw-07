@@ -7,15 +7,18 @@ const buttonIncrement = document.querySelector('[data-action="increment"]')
 console.log(buttonIncrement);
 let counterValue = 0
 
-const makeDecrement = () => {
+const handleClickOnDecrement = () => {
     valueEl.textContent = counterValue
     counterValue -= 1
+    if (valueEl.textContent <= 0) {
+        return alert('Это минимальное количество')
+     }
 }
 
-const makeIncrement = () => {
+const handleClickOnIncrement = () => {
     valueEl.textContent = counterValue
     counterValue += 1
 }
 
-buttonDecrement.addEventListener('click', makeDecrement)
-buttonIncrement.addEventListener('click', makeIncrement )
+buttonDecrement.addEventListener('click', handleClickOnDecrement)
+buttonIncrement.addEventListener('click', handleClickOnIncrement )
