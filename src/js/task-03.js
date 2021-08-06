@@ -38,32 +38,32 @@ const images = [
 //2й способ
 //----------------------------------------------------------------------
 
-// const galleryContainer = document.querySelector('#gallery');
-// console.log(galleryContainer);
+const galleryContainer = document.querySelector('#gallery');
+console.log(galleryContainer);
 
-// const createGallery = images => {
-// galleryContainer.classList.add('gallery');
-//   const imageItemsList = (image) =>
-//     `<li><img src="${image.url}" alt="${image.alt}" width='310' height='210'></li>`;
+const createGallery = images => {
+galleryContainer.classList.add('gallery');
+  const imageItemsList = (image) =>
+    `<li><img src="${image.url}" alt="${image.alt}" width='310' height='210'></li>`;
  
-//   const listGallery = images.map(imageItemsList).join('')
+  const listGallery = images.map(imageItemsList).join('')
     
-// galleryContainer.insertAdjacentHTML('beforeend', listGallery)
+galleryContainer.insertAdjacentHTML('beforeend', listGallery)
     
-// }
+}
 
-// createGallery(images);
+createGallery(images);
 
 //----------------------------------------------------------------------
 //3й способ
 //----------------------------------------------------------------------
 
-const galleryList = document.querySelector('#gallery')
-console.log(galleryList);
-galleryList.classList.add('gallery')
+// const galleryList = document.querySelector('#gallery')
+// console.log(galleryList);
+// galleryList.classList.add('gallery')
 
-const createGallery = images.map(image => {
-  const { url, alt } = image;
-  galleryList.insertAdjacentHTML('beforeend', `<li><img src ="${url}" alt ="${alt}" width ="320" height ="200"></li>`)
+// const createGallery = images.map(image => {
+//   const { url, alt } = image;
+//   galleryList.insertAdjacentHTML('beforeend', `<li><img src ="${url}" alt ="${alt}" width ="320" height ="200"></li>`)
   
-})
+// })
